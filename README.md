@@ -19,8 +19,9 @@ This will setup a graphite/statsd/syslog-server instance in AWS.
 
 Once your server is up, you should be able to go http://ec2-24-134-125-167.compute-1.amazonaws.com and the graphite dashboard.
 
-Username: admin
-Password: adminpassword123
+Username: **admin**
+
+Password: **adminpassword123**
 
 Statsd will be listening to metrics on port **8125**
 
