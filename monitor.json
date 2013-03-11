@@ -1,0 +1,6 @@
+{
+  "name": "hoarder",
+  "run_list": [
+    "role[monitor]"
+  ]
+}

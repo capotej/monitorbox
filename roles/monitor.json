@@ -1,0 +1,15 @@
+{
+  "name": "monitor",
+  "default_attributes": { },
+  "override_attributes": { },
+  "json_class": "Chef::Role",
+  "description": "hoarder role.",
+  "chef_type": "role",
+  "run_list": [
+    "apt",
+    "ntp",
+    "graphite",
+    "statsd",
+    "syslog-ng::server"
+  ]
+}

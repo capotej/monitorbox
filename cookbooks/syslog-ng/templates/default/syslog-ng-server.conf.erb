@@ -1,0 +1,29 @@
+options {
+  keep_hostname(yes);
+};
+
+source system_logs {
+  internal();
+  unix-stream("/dev/log");
+  file("/proc/kmsg");
+};
+
+source external_logs {
+  udp(ip(0.0.0.0) port(12311));
+};
+
+destination general_file {
+  file("/mnt/log/syslog.log");
+};
+
+destination external_file {
+  file("/mnt/log/$MONTH-$DAY-external.log");
+};
+
+log {
+  source(system_logs); destination(general_file);
+};
+
+log {
+  source(external_logs); destination(external_file);
+};
